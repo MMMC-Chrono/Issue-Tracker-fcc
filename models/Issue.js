@@ -16,16 +16,12 @@ const IssueSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    assigned_to: {
-        type: String,
-    },
+    assigned_to: String,
     open: {
         type: Boolean,
         default: true
     },
-    status_text: {
-        type: String
-    }
+    status_text: String
 }, {
     versionKey: false
 })

@@ -7,24 +7,20 @@ module.exports = function (app) {
           .then(() => console.log("-----connected mongoose successfully-----"))
           .catch((e) => console.log(e))
   let { 
-    getAllIssue, 
-    createIssue
+    getIssue, 
+    createIssue,
+    updateIssue,
+    deleteIssue
   } = require('../controllers/functions')
 
   app.route('/api/issues/:project')
   
-    .get(getAllIssue)
+    .get(getIssue)
     
     .post(createIssue)
     
-    .put(function (req, res){
-      let project = req.params.project;
-      
-    })
+    .put(updateIssue)
     
-    .delete(function (req, res){
-      let project = req.params.project;
-      
-    });
+    .delete(deleteIssue);
     
 };
